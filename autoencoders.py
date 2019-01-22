@@ -1,6 +1,10 @@
 import numpy as np
 import torch
 import torch.nn as nn
+import torchvision
+import torchvision.datasets as datasets
+import matplotlib.pyplot as plt
+
 
 class AutoEncoder(nn.Module):
     def __init__(self):
@@ -32,5 +36,7 @@ class AutoEncoder(nn.Module):
         return encoded, decoded
 
 
+mnist_trainset = datasets.MNIST(root='./data', train=True, download=True, transform=None)
+print(mnist_trainset)
 
 
